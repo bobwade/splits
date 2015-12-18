@@ -1,0 +1,343 @@
+/*
+
+* SPLITS
+
+* Bob Wade
+
+*/
+
+
+
+/*BASE STYLES FROM MOBILE UP-SPLITS ARE ALL FULL WIDTH*/
+
+
+
+.container,
+
+.full-width-container {
+
+	position: relative;
+
+	width: 100%;
+
+	max-width: 1000px;
+
+	margin: 0 auto;
+
+	padding: 0 20px;
+
+	box-sizing: border-box; 
+
+	clear:left;
+
+}
+
+.full-width-container {
+
+	max-width:100%;
+
+	margin: 0;
+
+	padding: 0;
+
+}
+
+.split {
+
+	width: 100%;
+
+	float: left;
+
+	box-sizing: border-box; 
+
+}
+
+.gutter-row .split,
+
+.row .split {
+
+	margin-top: 4%;
+
+}
+
+
+
+/*CONTAINER GETS A WIDTH*/
+
+
+
+@media (min-width: 400px) 	{
+
+	.container {
+
+		width: 90%;
+
+		padding: 0; 
+
+	}
+
+}
+
+
+
+/*SPLITS GET THEIR NORMAL WIDTHS*/
+
+
+
+@media (min-width: 550px) 	{
+
+	.container 					{ width: 90%;				 }
+
+	.row,.gutter-row 			{ float: left;
+
+									  width: 100%;
+									  clear:left;				 }
+
+	.gutter-row .split		{ margin-left:4%;			 }
+
+	.gutter-row .split:first-child {
+
+		margin-left:0;
+
+	}
+
+
+
+/*WITHOUT GUTTERS*/
+
+	.sixths .split,
+
+	.sixth.split         	{ width: 16.6666666666%; }
+
+	.quarters .split,
+
+	.quarter.split     		{ width: 25%;            }
+
+	.thirds .split,
+
+	.third.split        		{ width: 33.3333333333%; }
+
+	.halves .split,
+
+	.half.split          	{ width: 50%;            }
+
+	.two-thirds.split     	{ width: 66.6666666666%; }
+
+	.three-quarters.split 	{ width: 75%;            }
+
+	.five-sixths.split    	{ width: 83.3333333333%; }
+
+	.full.split          	{ width: 100%;           }
+
+
+
+/*WITH GUTTERS*/
+
+
+	.gutter-row.sixths .split,
+
+	.gutter-row .sixth.split            { width: 13.3333333333%; }
+
+	.gutter-row.quarters .split,
+
+	.gutter-row .quarter.split     		{ width: 22%;            }
+
+	.gutter-row.thirds .split,
+
+	.gutter-row .third.split        	   { width: 30.6666666667%  }
+
+	.gutter-row.halves .split,
+
+	.gutter-row .half.split          	{ width: 48%;            }
+
+	.gutter-row .two-thirds.split     	{ width: 65.3333333333%; }
+
+	.gutter-row .three-quarters.split 	{ width: 74%;            }
+
+	.gutter-row .five-sixths.split 	   { width: 82.6666666666%; }
+
+	.gutter-row .full.split           	{ width: 100%; 
+
+													  margin-left: 0; 		 }
+
+
+
+/*OFFSET WITHOUT GUTTERS*/
+
+
+
+	.off-sixth.split           { margin-left: 16.6666666666%; }
+
+	.off-quarter.split         { margin-left: 25%;            }
+
+	.off-third.split           { margin-left: 33.3333333333%; }
+
+	.off-half.split            { margin-left: 50%;            }
+
+	.off-two-thirds.split      { margin-left: 66.6666666666%; }
+
+	.off-three-quarters.split  { margin-left: 75%;            }
+
+
+
+/*OFFSET WITH GUTTERS*/
+
+
+
+	.gutter-row .off-sixth.split           { margin-left: 17.3333333333%; }
+
+	.gutter-row .off-quarter.split         { margin-left: 26%;            }
+
+	.gutter-row .off-third.split           { margin-left: 34.6666666667%; }
+
+	.gutter-row .off-half.split            { margin-left: 52%;            }
+
+	.gutter-row .off-two-thirds.split      { margin-left: 69.3333333333%; }
+
+	.gutter-row .off-three-quarters.split  { margin-left: 78.0%;          }
+
+	.gutter-row .off-five-sixths.split     { margin-left: 86.6666666666%; }
+
+
+
+/*
+
+*PROGRESSIVE SCALING:
+
+*/
+
+
+
+/*ALL SPLITS BECOME HALVES*/
+
+
+
+	.gutter-row.scale-sixths   .split,
+
+	.gutter-row.scale-quarters .split,
+
+	.gutter-row.scale-thirds   .split     					{ width:48%; 				}
+
+	.scale-sixths .split,
+
+	.scale-quarters .split,
+
+	.scale-thirds .split                   				{ width: 50%;				}
+
+	.gutter-row.scale-sixths   .split:nth-child(2n+1),
+
+	.gutter-row.scale-quarters .split:nth-child(2n+1),
+
+	.gutter-row.scale-thirds   .split:nth-child(2n+1)  { margin-left: 0;     	}
+
+	.skip-halves.gutter-row    .split,    
+
+   .skip-halves .split                          	   { width: 100%;   			}
+
+   .skip-halves.gutter-row    .split:nth-child(2n)    { margin-left: 0%;      }
+
+}
+
+
+
+/*IF SET AS THIRDS,QUARTERS OR SIXTHS, SPLITS BECOME THIRDS UNLESS SKIPPED*/
+
+
+
+@media (min-width: 650px) {
+
+	.gutter-row.scale-sixths   .split,
+
+	.gutter-row.scale-quarters .split,
+
+	.gutter-row.scale-thirds   .split   					{ width: 30.6666666666% } 
+
+	.scale-sixths   .split,
+
+	.scale-quarters .split,
+
+	.scale-thirds   .split              					{ width: 33.3333333333%;}
+
+	.gutter-row.scale-sixths   .split:nth-child(2n+1),
+
+	.gutter-row.scale-quarters .split:nth-child(2n+1),
+
+	.gutter-row.scale-thirds   .split:nth-child(2n+1)  { margin-left: 4%;      }
+
+	.gutter-row.scale-sixths   .split:nth-child(3n+1),
+
+	.gutter-row.scale-quarters .split:nth-child(3n+1),
+
+	.gutter-row.scale-thirds   .split:nth-child(3n+1)  { margin-left: 0;       }
+
+   .skip-thirds.gutter-row    .split     					{ width: 48%;   			}
+
+   .skip-thirds .split                						{ width: 50%;   			}
+
+	.skip-halves.gutter-row    .split:nth-child(2n),
+
+	.skip-thirds.gutter-row    .split:nth-child(2n)   	{ margin-left: 4%;      }
+
+   .skip-halves.gutter-row    .split:nth-child(3n+1),
+
+	.skip-thirds.gutter-row    .split:nth-child(2n+1) 	{ margin-left: 0;     	}
+
+}
+
+
+
+/*IF SET AS QUARTERS OR SIXTHS, SPLITS BECOME QUARTERS UNLESS SKIPPED*/
+
+
+
+@media (min-width: 750px) {
+
+	.gutter-row.scale-sixths   .split,
+
+	.gutter-row.scale-quarters .split                 	{ width:22%;				} 
+
+	.scale-sixths   .split,
+
+	.scale-quarters .split                            	{ width: 25%;       		}
+
+	.gutter-row.scale-sixths   .split:nth-child(3n+1),
+
+	.gutter-row.scale-quarters .split:nth-child(3n+1) 	{ margin-left: 4%;		}
+
+	.gutter-row.scale-sixths   .split:nth-child(4n+1),
+
+	.gutter-row.scale-quarters .split:nth-child(4n+1) 	{ margin-left: 0; 		}
+
+	.skip-quarters.gutter-row  .split      				{ width: 30.6666666666%;}
+
+	.skip-quarters .split                					{ width: 33.3333333333%;}
+
+	.skip-thirds.gutter-row    .split:nth-child(2n+1),
+
+	.skip-quarters.gutter-row  .split:nth-child(2n+1) 	{ margin-left: 4%; 		}
+
+	.skip-quarters.gutter-row  .split:nth-child(3n+1) 	{ margin-left: 0px;		}
+
+	.skip-thirds.gutter-row    .split:nth-child(4n-3)  { margin-left: 0px;		}
+
+}
+
+
+
+/*IF SET AS SIXTHS, SPLITS BECOME SIXTHS*/
+
+
+
+@media (min-width: 850px) {
+
+	.gutter-row.scale-sixths   .split      				{ width: 13.3333333333%;}
+
+	.scale-sixths .split                 					{ width: 16.6666666666%;}
+
+	.gutter-row.scale-sixths   .split:nth-child(4n+1) 	{ margin-left: 4%;      }
+
+	.gutter-row.scale-sixths   .split:nth-child(6n+1) 	{    margin-left: 0px;  }
+
+	.skip-quarters.gutter-row  .split:nth-child(2n+2)	{ margin-left: 4%;      }
+
+}
