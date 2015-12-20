@@ -33,11 +33,7 @@
 	float: left;
 	box-sizing: border-box; 
 }
-.gutter-row .split,
-.row .split {
-	margin-top: 4%;
-}
-.full-width.gutter-row .split {
+.full-width.gutters .split {
 	width:90%;
 	margin-left:5%;
 }
@@ -46,8 +42,8 @@
 
 @media (min-width: 550px) 	{
 	.container 			{ width: 90%;	 }
-	.gutter-row .split		{ margin-left:4%;}
-	.gutter-row .split:first-child  { margin-left:0; }
+	.gutters .split		{ margin-left:4%;}
+	.gutters .split:first-child  { margin-left:0; }
 
 /*WITHOUT GUTTERS*/
 
@@ -66,18 +62,18 @@
 
 /*WITH GUTTERS*/
 
-	.gutter-row.all-1\/6 .split,
-	.gutter-row .\31 \/6.split	{ width: 13.3333333333%; }
-	.gutter-row.all-1\/4 .split,
-	.gutter-row .\31 \/4.split	{ width: 22%;            }
-	.gutter-row.all-1\/3 .split,
-	.gutter-row .\31 \/3.split	{ width: 30.6666666667%  }
-	.gutter-row.all-1\/2 .split,
-	.gutter-row .\31 \/2.split	{ width: 48%;            }
-	.gutter-row .\32 \/3.split	{ width: 65.3333333333%; }
-	.gutter-row .\33 \/4.split	{ width: 74%;            }
-	.gutter-row .\35 \/6.split	{ width: 82.6666666666%; }
-	.gutter-row .full.split		{ width: 100%; 
+	.gutters.all-1\/6 .split,
+	.gutters .\31 \/6.split	{ width: 13.3333333333%; }
+	.gutters.all-1\/4 .split,
+	.gutters .\31 \/4.split	{ width: 22%;            }
+	.gutters.all-1\/3 .split,
+	.gutters .\31 \/3.split	{ width: 30.6666666667%  }
+	.gutters.all-1\/2 .split,
+	.gutters .\31 \/2.split	{ width: 48%;            }
+	.gutters .\32 \/3.split	{ width: 65.3333333333%; }
+	.gutters .\33 \/4.split	{ width: 74%;            }
+	.gutters .\35 \/6.split	{ width: 82.6666666666%; }
+	.gutters .full.split		{ width: 100%; 
 					  margin-left: 0; 	 }
 
 /*OFFSET WITHOUT GUTTERS*/
@@ -92,13 +88,13 @@
 
 /*OFFSET WITH GUTTERS*/
 
-	.gutter-row .off-1\/6.split	{ margin-left: 17.3333333333%;	}
-	.gutter-row .off-1\/4.split	{ margin-left: 26%;		}
-	.gutter-row .off-1\/3.split	{ margin-left: 34.6666666667%;	}
-	.gutter-row .off-1\/2.split	{ margin-left: 52%;		}
-	.gutter-row .off-2\/3.split	{ margin-left: 69.3333333333%;	}
-	.gutter-row .off-3\/4.split	{ margin-left: 78.0%;		}
-	.gutter-row .off-5\/6.split	{ margin-left: 86.6666666666%;	}
+	.gutters .off-1\/6.split	{ margin-left: 17.3333333333%;	}
+	.gutters .off-1\/4.split	{ margin-left: 26%;		}
+	.gutters .off-1\/3.split	{ margin-left: 34.6666666667%;	}
+	.gutters .off-1\/2.split	{ margin-left: 52%;		}
+	.gutters .off-2\/3.split	{ margin-left: 69.3333333333%;	}
+	.gutters .off-3\/4.split	{ margin-left: 78.0%;		}
+	.gutters .off-5\/6.split	{ margin-left: 86.6666666666%;	}
 
 /*
 *PROGRESSIVE SCALING:
@@ -106,82 +102,68 @@
 
 /*ALL SPLITS BECOME HALVES*/
 
-	.gutter-row.scale-1\/6 .split,
-	.gutter-row.scale-1\/4 .split,
-	.gutter-row.scale-1\/3 .split			{ width:48%;		}
+	.gutters.scale-1\/6 .split,
+	.gutters.scale-1\/4 .split,
+	.gutters.scale-1\/3 .split			{ width:48%;		}
 	.scale-1\/6 .split,
 	.scale-1\/4 .split,
 	.scale-1\/3 .split				{ width: 50%;		}
-	.gutter-row.scale-1\/6 .split:nth-child(2n+1),
-	.gutter-row.scale-1\/4 .split:nth-child(2n+1),
-	.gutter-row.scale-1\/3 .split:nth-child(2n+1)	{ margin-left: 0;	}
-	.skip-1\/2.gutter-row  .split,    
+	.gutters.scale-1\/6 .split:nth-child(2n+1),
+	.gutters.scale-1\/4 .split:nth-child(2n+1),
+	.gutters.scale-1\/3 .split:nth-child(2n+1)	{ margin-left: 0;	}
+	.skip-1\/2.gutters  .split,    
    	.skip-1\/2 .split                          	{ width: 100%;		}
-   	.skip-1\/2.gutter-row  .split:nth-child(2n)	{ margin-left: 0%;	}
+   	.skip-1\/2.gutters  .split:nth-child(2n)	{ margin-left: 0%;	}
 }
 
 /*IF SET AS THIRDS,QUARTERS OR SIXTHS, SPLITS BECOME THIRDS UNLESS SKIPPED*/
 
 @media (min-width: 650px) {
-	.gutter-row.scale-1\/6 .split,
-	.gutter-row.scale-1\/4 .split,
-	.gutter-row.scale-1\/3 .split			{ width: 30.6666666666% } 
+	.gutters.scale-1\/6 .split,
+	.gutters.scale-1\/4 .split,
+	.gutters.scale-1\/3 .split			{ width: 30.6666666666% } 
 	.scale-1\/6   .split,
 	.scale-1\/4 .split,
 	.scale-1\/3   .split				{ width: 33.3333333333%;}
-	.gutter-row.scale-1\/6 .split:nth-child(2n+1),
-	.gutter-row.scale-1\/4 .split:nth-child(2n+1),
-	.gutter-row.scale-1\/3 .split:nth-child(2n+1)	{ margin-left: 4%;	}
-	.gutter-row.scale-1\/6 .split:nth-child(3n+1),
-	.gutter-row.scale-1\/4 .split:nth-child(3n+1),
-	.gutter-row.scale-1\/3 .split:nth-child(3n+1)	{ margin-left: 0;	}
-	.skip-1\/3.gutter-row  .split			{ width: 48%;		}
+	.gutters.scale-1\/6 .split:nth-child(2n+1),
+	.gutters.scale-1\/4 .split:nth-child(2n+1),
+	.gutters.scale-1\/3 .split:nth-child(2n+1)	{ margin-left: 4%;	}
+	.gutters.scale-1\/6 .split:nth-child(3n+1),
+	.gutters.scale-1\/4 .split:nth-child(3n+1),
+	.gutters.scale-1\/3 .split:nth-child(3n+1)	{ margin-left: 0;	}
+	.skip-1\/3.gutters  .split			{ width: 48%;		}
 	.skip-1\/3 .split				{ width: 50%;		}
-	.skip-1\/2.gutter-row  .split:nth-child(2n),
-	.skip-1\/3.gutter-row  .split:nth-child(2n)	{ margin-left: 4%;	}
-	.skip-1\/2.gutter-row  .split:nth-child(3n+1),
-	.skip-1\/3.gutter-row  .split:nth-child(2n+1)	{ margin-left: 0;	}
+	.skip-1\/2.gutters  .split:nth-child(2n),
+	.skip-1\/3.gutters  .split:nth-child(2n)	{ margin-left: 4%;	}
+	.skip-1\/2.gutters  .split:nth-child(3n+1),
+	.skip-1\/3.gutters  .split:nth-child(2n+1)	{ margin-left: 0;	}
 }
 
 /*IF SET AS QUARTERS OR SIXTHS, SPLITS BECOME QUARTERS UNLESS SKIPPED*/
 
 @media (min-width: 750px) {
-	.gutter-row.scale-1\/6 .split,
-	.gutter-row.scale-1\/4 .split			{ width:22%;		} 
+	.gutters.scale-1\/6 .split,
+	.gutters.scale-1\/4 .split			{ width:22%;		} 
 	.scale-1\/6   .split,
 	.scale-1\/4 .split				{ width: 25%;		}
-	.gutter-row.scale-1\/6 .split:nth-child(3n+1),
-	.gutter-row.scale-1\/4 .split:nth-child(3n+1)	{ margin-left: 4%;	}
-	.gutter-row.scale-1\/6 .split:nth-child(4n+1),
-	.gutter-row.scale-1\/4 .split:nth-child(4n+1)	{ margin-left: 0;	}
-	.skip-1\/4.gutter-row  .split			{ width: 30.6666666666%;}
+	.gutters.scale-1\/6 .split:nth-child(3n+1),
+	.gutters.scale-1\/4 .split:nth-child(3n+1)	{ margin-left: 4%;	}
+	.gutters.scale-1\/6 .split:nth-child(4n+1),
+	.gutters.scale-1\/4 .split:nth-child(4n+1)	{ margin-left: 0;	}
+	.skip-1\/4.gutters  .split			{ width: 30.6666666666%;}
 	.skip-1\/4 .split                		{ width: 33.3333333333%;}
-	.skip-1\/3.gutter-row  .split:nth-child(2n+1),
-	.skip-1\/4.gutter-row  .split:nth-child(2n+1)	{ margin-left: 4%;	}
-	.skip-1\/4.gutter-row  .split:nth-child(3n+1)	{ margin-left: 0;	}
-	.skip-1\/3.gutter-row  .split:nth-child(4n-3)	{ margin-left: 0;	}
+	.skip-1\/3.gutters  .split:nth-child(2n+1),
+	.skip-1\/4.gutters  .split:nth-child(2n+1)	{ margin-left: 4%;	}
+	.skip-1\/4.gutters  .split:nth-child(3n+1)	{ margin-left: 0;	}
+	.skip-1\/3.gutters  .split:nth-child(4n-3)	{ margin-left: 0;	}
 }
 
 /*IF SET AS SIXTHS, SPLITS BECOME SIXTHS*/
 
 @media (min-width: 850px) {
-	.gutter-row.scale-1\/6 .split			{ width: 13.3333333333%;}
+	.gutters.scale-1\/6 .split			{ width: 13.3333333333%;}
 	.scale-1\/6 .split				{ width: 16.6666666666%;}
-	.gutter-row.scale-1\/6 .split:nth-child(4n+1)	{ margin-left: 4%;	}
-	.gutter-row.scale-1\/6 .split:nth-child(6n+1)	{ margin-left: 0;	}
-	.skip-1\/4.gutter-row  .split:nth-child(2n+2)	{ margin-left: 4%;	}
+	.gutters.scale-1\/6 .split:nth-child(4n+1)	{ margin-left: 4%;	}
+	.gutters.scale-1\/6 .split:nth-child(6n+1)	{ margin-left: 0;	}
+	.skip-1\/4.gutters  .split:nth-child(2n+2)	{ margin-left: 4%;	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
