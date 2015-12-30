@@ -42,8 +42,9 @@
 
 @media (min-width: 550px) 	{
 	.container 			{ width: 90%;	 }
-	.gutters .split		{ margin-left:4%;}
-	.gutters .split:first-child  { margin-left:0; }
+	.full-width.gutters .split,
+	.gutters .split			{ margin-left:4%;}
+	.gutters .split:first-child	{ margin-left:0; }
 
 /*WITHOUT GUTTERS*/
 
@@ -61,7 +62,7 @@
 	.full.split          	{ width: 100%;           }
 
 /*WITH GUTTERS*/
-
+	
 	.gutters.all-1\/6 .split,
 	.gutters .\31 \/6.split	{ width: 13.3333333333%; }
 	.gutters.all-1\/4 .split,
