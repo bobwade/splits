@@ -2,7 +2,7 @@
 
 Splits is a responsive grid under development (version available on here will work though, just that more features may be added).
 
-It uses semantic class names, and the grid is split into sixths. Here's a an example of three third width divs:
+It uses semantic class names, and the grid is split into sixths as minimum sizes. Here's a an example of three third width divs:
 ```html
 <div class="contain all-1/3">
   <div class="split"></div>
@@ -10,11 +10,11 @@ It uses semantic class names, and the grid is split into sixths. Here's a an exa
   <div class="split"></div>
 </div>
 ```
-It's full page width or constrained to margin auto container (class="full-width" or class="contain").
+The container can be full page width or constrained, where it is set to margin: auto, and width:1000px (class="full-width" or class="contain"), you can change the 1000px to your hearts delight.
 
-The width of the child elements is stated as a fraction (eg class="2/3" or class="1/4")
+The width of the child elements is stated as a fraction and has to have split in there too (eg class="2/3 split" or class="1/4 split")
 
-Comes default without gutters. but adding the "gutters" class to the parent element will stick them in there. Here's an example of a 3/4 element and a 1/4 element with gutters:
+It comes without gutters by default, but adding the "gutters" class to the parent element will stick them in there. Here's an example of a 3/4 element and a 1/4 element with gutters:
 
 ```html
 <div class="contain gutters">
