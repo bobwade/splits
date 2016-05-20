@@ -1,12 +1,12 @@
 /*
 / www.splitsframework.com
 / By Bob Wade
-/ Splits V 0.1
+/ Splits V 0.2
 / Copyright 2016 
 / MIT License
 */
 
-/*BASE STYLES FROM MOBILE UP-SPLITS ARE ALL FULL WIDTH*/
+/* splits at full width and basic set up */
 
 .contain,
 .full-width {
@@ -38,46 +38,52 @@
 	margin-left:5%;
 }
 
-/*SPLITS GET THEIR NORMAL WIDTHS*/
+/* basic widths for splits */
 
-@media (min-width: 550px) 	{
-	.container 			{ width: 90%;	 }
+@media (min-width: 450px) 	{
+	.container 			         { width: 90%;	 }
 	.full-width.gutters .split,
-	.gutters .split			{ margin-left:4%;}
-	.gutters .split:first-child	{ margin-left:0; }
+	.gutters .split			     { margin-left:4%;}
+	.gutters .split:first-child  { margin-left:0; }
 
-/*WITHOUT GUTTERS*/
+    /* without gutters */
 
 	.all-1\/6 .split,
-	.\31 \/6.split         	{ width: 16.6666666666%; }
+	.\31 \/6.split      { width: 16.6666666666%; }
 	.all-1\/4 .split,
 	.\31 \/4.split     	{ width: 25%;            }
 	.all-1\/3 .split,
-	.\31 \/3.split        	{ width: 33.3333333333%; }
+	.\31 \/3.split      { width: 33.3333333333%; }
 	.all-1\/2 .split,
-	.\31 \/2.split          { width: 50%;            }
+	.\31 \/2.split      { width: 50%;            }
 	.\32 \/3.split     	{ width: 66.6666666666%; }
 	.\33 \/4.split		{ width: 75%;            }
 	.\35 \/6.split    	{ width: 83.3333333333%; }
-	.full.split          	{ width: 100%;           }
+	.full.split         { width: 100%;           }
 
-/*WITH GUTTERS*/
+    /* with gutters */
 	
 	.gutters.all-1\/6 .split,
 	.gutters .\31 \/6.split	{ width: 13.3333333333%; }
 	.gutters.all-1\/4 .split,
 	.gutters .\31 \/4.split	{ width: 22%;            }
 	.gutters.all-1\/3 .split,
-	.gutters .\31 \/3.split	{ width: 30.6666666667%  }
+	.gutters .\31 \/3.split	{ width: 30.6666666666%  }
 	.gutters.all-1\/2 .split,
 	.gutters .\31 \/2.split	{ width: 48%;            }
 	.gutters .\32 \/3.split	{ width: 65.3333333333%; }
 	.gutters .\33 \/4.split	{ width: 74%;            }
 	.gutters .\35 \/6.split	{ width: 82.6666666666%; }
-	.gutters .full.split		{ width: 100%; 
-					  margin-left: 0; 	 }
+	.gutters .full.split	{ width: 100%; margin-left: 0;}
+    
+    /* multi row splits margins */
+    
+    .gutters.all-1\/6 .split:nth-child(6n+1),
+	.gutters.all-1\/4 .split:nth-child(4n+1),
+	.gutters.all-1\/3 .split:nth-child(3n+1),
+    .gutters.all-1\/2 .split:nth-child(2n+1)    { margin-left: 0%;}
 
-/*OFFSET WITHOUT GUTTERS*/
+    /* offsets without gutters */
 
 	.off-1\/6.split	{ margin-left: 16.6666666666%;	}
 	.off-1\/4.split	{ margin-left: 25%;		}
@@ -87,84 +93,232 @@
 	.off-3\/4.split	{ margin-left: 75%;		}
 	.off-5\/6.split	{ margin-left: 83.3333333333%	}
 
-/*OFFSET WITH GUTTERS*/
+    /* offsets with gutters */
 
 	.gutters .off-1\/6.split	{ margin-left: 17.3333333333%;	}
 	.gutters .off-1\/4.split	{ margin-left: 26%;		}
-	.gutters .off-1\/3.split	{ margin-left: 34.6666666667%;	}
+	.gutters .off-1\/3.split	{ margin-left: 34.6666666666%;	}
 	.gutters .off-1\/2.split	{ margin-left: 52%;		}
 	.gutters .off-2\/3.split	{ margin-left: 69.3333333333%;	}
 	.gutters .off-3\/4.split	{ margin-left: 78.0%;		}
 	.gutters .off-5\/6.split	{ margin-left: 86.6666666666%;	}
-
-/*
-*PROGRESSIVE SCALING:
-*/
-
-/*ALL SPLITS BECOME HALVES*/
-
-	.gutters.scale-1\/6 .split,
-	.gutters.scale-1\/4 .split,
-	.gutters.scale-1\/3 .split			{ width:48%;		}
-	.scale-1\/6 .split,
-	.scale-1\/4 .split,
-	.scale-1\/3 .split				{ width: 50%;		}
-	.gutters.scale-1\/6 .split:nth-child(2n+1),
-	.gutters.scale-1\/4 .split:nth-child(2n+1),
-	.gutters.scale-1\/3 .split:nth-child(2n+1)	{ margin-left: 0;	}
-	.skip-1\/2.gutters  .split,    
-   	.skip-1\/2 .split                          	{ width: 100%;		}
-   	.skip-1\/2.gutters  .split:nth-child(2n)	{ margin-left: 0%;	}
 }
 
-/*IF SET AS THIRDS,QUARTERS OR SIXTHS, SPLITS BECOME THIRDS UNLESS SKIPPED*/
+/* @s Breakpoint */
 
-@media (min-width: 650px) {
-	.gutters.scale-1\/6 .split,
-	.gutters.scale-1\/4 .split,
-	.gutters.scale-1\/3 .split			{ width: 30.6666666666% } 
-	.scale-1\/6   .split,
-	.scale-1\/4 .split,
-	.scale-1\/3   .split				{ width: 33.3333333333%;}
-	.gutters.scale-1\/6 .split:nth-child(2n+1),
-	.gutters.scale-1\/4 .split:nth-child(2n+1),
-	.gutters.scale-1\/3 .split:nth-child(2n+1)	{ margin-left: 4%;	}
-	.gutters.scale-1\/6 .split:nth-child(3n+1),
-	.gutters.scale-1\/4 .split:nth-child(3n+1),
-	.gutters.scale-1\/3 .split:nth-child(3n+1)	{ margin-left: 0;	}
-	.skip-1\/3.gutters  .split			{ width: 48%;		}
-	.skip-1\/3 .split				{ width: 50%;		}
-	.skip-1\/2.gutters  .split:nth-child(2n),
-	.skip-1\/3.gutters  .split:nth-child(2n)	{ margin-left: 4%;	}
-	.skip-1\/2.gutters  .split:nth-child(3n+1),
-	.skip-1\/3.gutters  .split:nth-child(2n+1)	{ margin-left: 0;	}
+@media (min-width: 600px) {
+    
+    /* @s display properties */
+    
+    .\@s-block          { display: block;        }
+    .\@s-inline         { display: inline;       }
+    .\@s-inline-block   { display: inline-block; }
+    .\@s-display-none   { display: none;         }
+    
+    /* @s splits without gutters */
+    
+    .\@s-all-1\/6 .split,
+    .\@s-1\/6.split         { width: 16.6666666666%;}
+    .\@s-all-1\/4 .split,
+    .\@s-1\/4.split         { width: 25;            }
+    .\@s-all-1\/3 .split,
+    .\@s-1\/3.split         { width: 33.3333333333%;}
+    .\@s-all-1\/2 .split,
+    .\@s-1\/2.split         { width: 50%;           }
+    .\@s-2\/3.split         { width: 66.6666666666%;}
+    .\@s-3\/4.split         { width: 75%;           }
+    .\@s-5\/6.split         { width: 83.3333333333%;}
+    .\@s-full.split         { width: 100%;          }
+    
+    /* @s splits with gutters */
+    
+    .gutters.\@s-all-1\/6 .split,
+    .gutters .\@s-1\/6.split    { width: 13.3333333333%;}
+    .gutters.\@s-all-1\/4 .split,
+    .gutters .\@s-1\/4.split    { width: 22%;           }
+    .gutters.\@s-all-1\/3 .split,
+    .gutters .\@s-1\/3.split    { width: 30.6666666666%;}
+    .gutters.\@s-all-1\/2 .split,
+    .gutters .\@s-1\/2.split    { width: 48%;           }
+    .gutters .\@s-2\/3.split    { width: 65.3333333333%;}
+    .gutters .\@s-3\/4.split    { width: 74%;           }
+    .gutters .\@s-5\/6.split    { width: 82.6666666666%;}
+    .gutters .\@s-full.split    { width: 100%; margin-left: 0;}
+    
+    /* @s multi row splits margins */
+    
+    .gutters.\@s-all-1\/6 .split:nth-child(1n+0),
+	.gutters.\@s-all-1\/4 .split:nth-child(1n+0),
+	.gutters.\@s-all-1\/3 .split:nth-child(1n+0),
+    .gutters.\@s-all-1\/2 .split:nth-child(1n+0)    { margin-left: 4%;}    
+    .gutters.\@s-all-1\/6 .split:nth-child(6n+1),
+	.gutters.\@s-all-1\/4 .split:nth-child(4n+1),
+	.gutters.\@s-all-1\/3 .split:nth-child(3n+1),
+    .gutters.\@s-all-1\/2 .split:nth-child(2n+1)    { margin-left: 0%;}
+    
+    /* @s offsets without gutters */
+
+	.\@s-off-1\/6.split	{ margin-left: 16.6666666666%;	}
+	.\@s-off-1\/4.split	{ margin-left: 25%;		}
+	.\@s-off-1\/3.split	{ margin-left: 33.3333333333%;	}
+	.\@s-off-1\/2.split	{ margin-left: 50%;		}
+	.\@s-off-2\/3.split	{ margin-left: 66.6666666666%;	}
+	.\@s-off-3\/4.split	{ margin-left: 75%;		}
+	.\@s-off-5\/6.split	{ margin-left: 83.3333333333%	}
+
+    /* @s offsets with gutters */
+
+	.gutters .\@s-off-1\/6.split	{ margin-left: 17.3333333333%;	}
+	.gutters .\@s-off-1\/4.split	{ margin-left: 26%;		}
+	.gutters .\@s-off-1\/3.split	{ margin-left: 34.6666666666%;	}
+	.gutters .\@s-off-1\/2.split	{ margin-left: 52%;		}
+	.gutters .\@s-off-2\/3.split	{ margin-left: 69.3333333333%;	}
+	.gutters .\@s-off-3\/4.split	{ margin-left: 78.0%;		}
+	.gutters .\@s-off-5\/6.split	{ margin-left: 86.6666666666%;	}
 }
 
-/*IF SET AS QUARTERS OR SIXTHS, SPLITS BECOME QUARTERS UNLESS SKIPPED*/
+/* @m Breakpoint */
 
-@media (min-width: 750px) {
-	.gutters.scale-1\/6 .split,
-	.gutters.scale-1\/4 .split			{ width:22%;		} 
-	.scale-1\/6   .split,
-	.scale-1\/4 .split				{ width: 25%;		}
-	.gutters.scale-1\/6 .split:nth-child(3n+1),
-	.gutters.scale-1\/4 .split:nth-child(3n+1)	{ margin-left: 4%;	}
-	.gutters.scale-1\/6 .split:nth-child(4n+1),
-	.gutters.scale-1\/4 .split:nth-child(4n+1)	{ margin-left: 0;	}
-	.skip-1\/4.gutters  .split			{ width: 30.6666666666%;}
-	.skip-1\/4 .split                		{ width: 33.3333333333%;}
-	.skip-1\/3.gutters  .split:nth-child(2n+1),
-	.skip-1\/4.gutters  .split:nth-child(2n+1)	{ margin-left: 4%;	}
-	.skip-1\/4.gutters  .split:nth-child(3n+1)	{ margin-left: 0;	}
-	.skip-1\/3.gutters  .split:nth-child(4n-3)	{ margin-left: 0;	}
+@media (min-width: 900px) {
+    
+    /* @m display properties */
+    
+    .\@m-block          { display: block;        }
+    .\@m-inline         { display: inline;       }
+    .\@m-inline-block   { display: inline-block; }
+    .\@m-display-none   { display: none;         }
+    
+    /* @m splits without gutters */
+    
+    .\@m-all-1\/6 .split,
+    .\@m-1\/6.split         { width: 16.6666666666%;}
+    .\@m-all-1\/4 .split,
+    .\@m-1\/4.split         { width: 25;            }
+    .\@m-all-1\/3 .split,
+    .\@m-1\/3.split         { width: 33.3333333333%;}
+    .\@m-all-1\/2 .split,
+    .\@m-1\/2.split         { width: 50%;           }
+    .\@m-2\/3.split         { width: 66.6666666666%;}
+    .\@m-3\/4.split         { width: 75%;           }
+    .\@m-5\/6.split         { width: 83.3333333333%;}
+    .\@m-full.split         { width: 100%;          }
+    
+    /* @m splits with gutters */
+    
+    .gutters.\@m-all-1\/6 .split,
+    .gutters .\@m-1\/6.split    { width: 13.3333333333%;}
+    .gutters.\@m-all-1\/4 .split,
+    .gutters .\@m-1\/4.split    { width: 22%;           }
+    .gutters.\@m-all-1\/3 .split,
+    .gutters .\@m-1\/3.split    { width: 30.6666666666%;}
+    .gutters.\@m-all-1\/2 .split,
+    .gutters .\@m-1\/2.split    { width: 48%;           }
+    .gutters .\@m-2\/3.split    { width: 65.3333333333%;}
+    .gutters .\@m-3\/4.split    { width: 74%;           }
+    .gutters .\@m-5\/6.split    { width: 82.6666666666%;}
+    .gutters .\@m-full.split    { width: 100%; margin-left: 0;}
+    
+    /* @m multi row splits margins */
+    
+    .gutters.\@m-all-1\/6 .split:nth-child(1n+0),
+	.gutters.\@m-all-1\/4 .split:nth-child(1n+0),
+	.gutters.\@m-all-1\/3 .split:nth-child(1n+0),
+    .gutters.\@m-all-1\/2 .split:nth-child(1n+0)    { margin-left: 4%;}    
+    .gutters.\@m-all-1\/6 .split:nth-child(6n+1),
+	.gutters.\@m-all-1\/4 .split:nth-child(4n+1),
+	.gutters.\@m-all-1\/3 .split:nth-child(3n+1),
+    .gutters.\@m-all-1\/2 .split:nth-child(2n+1)    { margin-left: 0%;}
+    
+    /* @m offsets without gutters */
+
+	.\@m-off-1\/6.split	{ margin-left: 16.6666666666%;	}
+	.\@m-off-1\/4.split	{ margin-left: 25%;		}
+	.\@m-off-1\/3.split	{ margin-left: 33.3333333333%;	}
+	.\@m-off-1\/2.split	{ margin-left: 50%;		}
+	.\@m-off-2\/3.split	{ margin-left: 66.6666666666%;	}
+	.\@m-off-3\/4.split	{ margin-left: 75%;		}
+	.\@m-off-5\/6.split	{ margin-left: 83.3333333333%	}
+
+    /* @m offsets with gutters */
+
+	.gutters .\@m-off-1\/6.split	{ margin-left: 17.3333333333%;	}
+	.gutters .\@m-off-1\/4.split	{ margin-left: 26%;		}
+	.gutters .\@m-off-1\/3.split	{ margin-left: 34.6666666666%;	}
+	.gutters .\@m-off-1\/2.split	{ margin-left: 52%;		}
+	.gutters .\@m-off-2\/3.split	{ margin-left: 69.3333333333%;	}
+	.gutters .\@m-off-3\/4.split	{ margin-left: 78.0%;		}
+	.gutters .\@m-off-5\/6.split	{ margin-left: 86.6666666666%;	}
 }
 
-/*IF SET AS SIXTHS, SPLITS BECOME SIXTHS*/
+/* @l Breakpoint */
 
-@media (min-width: 850px) {
-	.gutters.scale-1\/6 .split			{ width: 13.3333333333%;}
-	.scale-1\/6 .split				{ width: 16.6666666666%;}
-	.gutters.scale-1\/6 .split:nth-child(4n+1)	{ margin-left: 4%;	}
-	.gutters.scale-1\/6 .split:nth-child(6n+1)	{ margin-left: 0;	}
-	.skip-1\/4.gutters  .split:nth-child(2n+2)	{ margin-left: 4%;	}
+@media (min-width: 1200px) {
+    
+    /* @l display properties */
+    
+    .\@l-block          { display: block;        }
+    .\@l-inline         { display: inline;       }
+    .\@l-inline-block   { display: inline-block; }
+    .\@l-display-none   { display: none;         }
+    
+    /* @l splits without gutters */
+    
+    .\@l-all-1\/6 .split,
+    .\@l-1\/6.split         { width: 16.6666666666%;}
+    .\@l-all-1\/4 .split,
+    .\@l-1\/4.split         { width: 25;            }
+    .\@l-all-1\/3 .split,
+    .\@l-1\/3.split         { width: 33.3333333333%;}
+    .\@l-all-1\/2 .split,
+    .\@l-1\/2.split         { width: 50%;           }
+    .\@l-2\/3.split         { width: 66.6666666666%;}
+    .\@l-3\/4.split         { width: 75%;           }
+    .\@l-5\/6.split         { width: 83.3333333333%;}
+    .\@l-full.split         { width: 100%;          }
+    
+    /* @l splits with gutters */
+    
+    .gutters.\@l-all-1\/6 .split,
+    .gutters .\@l-1\/6.split    { width: 13.3333333333%;}
+    .gutters.\@l-all-1\/4 .split,
+    .gutters .\@l-1\/4.split    { width: 22%;           }
+    .gutters.\@l-all-1\/3 .split,
+    .gutters .\@l-1\/3.split    { width: 30.6666666666%;}
+    .gutters.\@l-all-1\/2 .split,
+    .gutters .\@l-1\/2.split    { width: 48%;           }
+    .gutters .\@l-2\/3.split    { width: 65.3333333333%;}
+    .gutters .\@l-3\/4.split    { width: 74%;           }
+    .gutters .\@l-5\/6.split    { width: 82.6666666666%;}
+    .gutters .\@l-full.split    { width: 100%; margin-left: 0;}
+    
+    /* @l multi row splits margins */
+    
+    .gutters.\@l-all-1\/6 .split:nth-child(1n+0),
+	.gutters.\@l-all-1\/4 .split:nth-child(1n+0),
+	.gutters.\@l-all-1\/3 .split:nth-child(1n+0),
+    .gutters.\@l-all-1\/2 .split:nth-child(1n+0)    { margin-left: 4%;}    
+    .gutters.\@l-all-1\/6 .split:nth-child(6n+1),
+	.gutters.\@l-all-1\/4 .split:nth-child(4n+1),
+	.gutters.\@l-all-1\/3 .split:nth-child(3n+1),
+    .gutters.\@l-all-1\/2 .split:nth-child(2n+1)    { margin-left: 0%;}
+    
+    /* @l offsets without gutters */
+
+	.\@l-off-1\/6.split	{ margin-left: 16.6666666666%;	}
+	.\@l-off-1\/4.split	{ margin-left: 25%;		}
+	.\@l-off-1\/3.split	{ margin-left: 33.3333333333%;	}
+	.\@l-off-1\/2.split	{ margin-left: 50%;		}
+	.\@l-off-2\/3.split	{ margin-left: 66.6666666666%;	}
+	.\@l-off-3\/4.split	{ margin-left: 75%;		}
+	.\@l-off-5\/6.split	{ margin-left: 83.3333333333%	}
+
+    /* @l offsets with gutters */
+
+	.gutters .\@l-off-1\/6.split	{ margin-left: 17.3333333333%;	}
+	.gutters .\@l-off-1\/4.split	{ margin-left: 26%;		}
+	.gutters .\@l-off-1\/3.split	{ margin-left: 34.6666666666%;	}
+	.gutters .\@l-off-1\/2.split	{ margin-left: 52%;		}
+	.gutters .\@l-off-2\/3.split	{ margin-left: 69.3333333333%;	}
+	.gutters .\@l-off-3\/4.split	{ margin-left: 78.0%;		}
+	.gutters .\@l-off-5\/6.split	{ margin-left: 86.6666666666%;	}
 }
