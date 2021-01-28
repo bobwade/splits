@@ -1,6 +1,8 @@
 # splits
 
-Splits is a responsive grid under development (version available on here will work though, just that more features may be added).
+Splits was a test at doing a responsive grid (version available on here should work though).
+
+Probably not useful in the days of flex and grid but I'll leave it here for posterity.
 
 It uses semantic class names, and the grid is split into sixths as minimum sizes. Here's a an example of three third width divs:
 ```html
@@ -23,10 +25,3 @@ It comes without gutters by default, but adding the "gutters" class to the paren
 </div>
 ```
 
-You can check out more of the syntax and some of the cooler features over at http://splitsframework.com/syntax
-
-If anyone is up for collaborating message me!
-
-Cheers
-
-Bob
